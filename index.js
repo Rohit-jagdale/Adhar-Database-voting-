@@ -1,3 +1,4 @@
+
 const express = require('express');
 const app = express();
 app.use(express.json());
@@ -14,4 +15,10 @@ app.post("/", async (req, res) => {
     res.send(result);
 });
 
-app.listen(4000);
+app.get('/getCitizens', (req, res) => {
+   Citizens.find()
+    .then(citizens => res.json(citizens))
+    .catch(err => res.json(err))
+});
+
+app.listen(4000); // listening at port 4000 on localhost

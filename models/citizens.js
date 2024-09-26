@@ -9,4 +9,5 @@ const citizensSchema = new mongoose.Schema({
     //fingerprint gonna add here
 });
 
-module.exports = mongoose.model("citizens", citizensSchema);
+const citizensModel = mongoose.model("citizens", citizensSchema);
+module.exports = citizensModel
